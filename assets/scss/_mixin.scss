@@ -1,0 +1,117 @@
+/***********************共通設定************************/
+$text: #211712;
+$link: #00196b;
+
+//break point
+$w_ssp: 400px;
+$w_sp: 750px;
+$w_sml: 1000px;
+$w_mid: 1300px;
+$w_lrg: 1500px;
+
+
+@mixin mediaSSP {  /* 450以下  */
+  @media all and (max-width: $w_ssp) {@content;}
+}
+
+
+@mixin mediaSP {  /* 750以下  */
+  @media all and (max-width: $w_sp) {@content;}
+}
+@mixin mediaPC {  /* 751以上 */
+  @media all and (min-width: $w_sp + 1) {@content;}
+}
+
+@mixin mediaSMLmax {  /* 1000以下  */
+  @media all and (max-width: $w_sml) {@content;}
+}
+
+@mixin mediaSMLmin {  /* 1001以上  */
+  @media all and (min-width: $w_sml + 1) {@content;}
+}
+
+@mixin mediaMIDmax {  /* 1300以下  */
+  @media all and (max-width: $w_mid) {@content;}
+}
+
+@mixin mediaMIDmin {  /* 1301以上  */
+  @media all and (min-width: $w_mid + 1) {@content;}
+}
+
+@mixin mediaLRGmax {  /* 1500以下  */
+  @media all and (max-width: $w_lrg ) {@content;}
+}
+
+@mixin mediaLRGmin {  /* 1501以上  */
+  @media all and (min-width: $w_lrg + 1) {@content;}
+}
+
+
+@mixin cont {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+
+@mixin trans {  transition: all .3s;}
+@mixin trans2 {  transition: all 1.2s;}
+
+@mixin orpheus {
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+@mixin arrow {
+  position: relative;
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #525252;
+  &::after{
+    content: "";
+    position: absolute;
+    background-size: 100%;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    background-position: center center;
+    border-radius: 30px;
+    top: -5px;
+    right: -50px;
+    @include trans;
+    cursor:pointer;
+    background-image: url(../images/btn_next.png);
+    background-position-x: -3px;
+    background-repeat: no-repeat;
+    background-size: 112%;
+    @include mediaSP(){
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &::before{
+    content: "";
+    width: 0%;
+    position: absolute;
+    height: 1px;
+    background: #525252;
+    bottom: -5px;
+    left: 0;
+    @include trans;
+  }
+  &:hover{
+    @include mediaPC(){
+      &::after{
+        background-position-x:0px ;
+      }
+      &::before{
+        width: 100%;
+      }
+    }
+  }
+}

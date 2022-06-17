@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+コースのメニュー
+----------------------------------------------------*/
+.course_menu {
+  margin: 80px 0 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .course_menu {
+    margin: 30px 0 0;
+  }
+}
+.course_menu a {
+  color: #707070;
+  font-size: 12px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .course_menu a {
+    font-size: 11px;
+  }
+}
+.course_menu a span {
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 23px;
+  display: block;
+  position: relative;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .course_menu a span {
+    font-size: 21px;
+  }
+}
+.course_menu a span::after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 1px;
+  background: #707070;
+  bottom: 0px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.course_menu a:hover span::after {
+  width: 100%;
+}
+.course_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 40px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .course_menu ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 20px 0;
+  }
+  .course_menu ul li {
+    width: 50%;
+    margin: 20px 0;
+  }
+}
+
+/*----------------------------------------------------
+アンカーのタイトル
+----------------------------------------------------*/
+#main .wp-block-pullquote {
+  display: block;
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  padding: 50px 0 20px;
+  border-bottom: 1px solid #000;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-pullquote {
+    padding: 30px 0 20px;
+  }
+}
+#main .wp-block-pullquote p {
+  text-align: center;
+  font-size: 53px;
+  margin: 0;
+  line-height: 1.4;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-pullquote p {
+    font-size: 36px;
+  }
+}
+#main .wp-block-pullquote#theme::before {
+  content: "テーマ";
+}
+#main .wp-block-pullquote#lecturers::before {
+  content: "講師陣";
+}
+#main .wp-block-pullquote#schedule::before {
+  content: "スケジュール";
+}
+#main .wp-block-pullquote#guidelines::before {
+  content: "募集要項";
+}
+#main .wp-block-pullquote#member::before {
+  content: "受講生ページ";
+}
+/*# sourceMappingURL=course.css.map */

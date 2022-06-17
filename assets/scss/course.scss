@@ -1,0 +1,99 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+/*----------------------------------------------------
+コースのメニュー
+----------------------------------------------------*/
+.course_menu{
+  margin: 80px 0 0;
+  @include mediaSP{
+    margin: 30px 0 0;
+  }
+
+  a{
+    color: #707070;
+    font-size: 12px;
+    @include mediaSP{
+      font-size: 11px;
+    }
+    span{
+      @include orpheus;
+      font-size: 23px;
+      display: block;
+      position: relative;
+      @include mediaSP{
+        font-size: 21px;
+      }
+      &::after{
+        content: "";
+        width: 0%;
+        position: absolute;
+        height: 1px;
+        background: #707070;
+        bottom: 0px;
+        left: 0;
+        @include trans;
+      }
+    }
+    &:hover{
+      span{
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 40px;
+    @include mediaSP{
+      flex-wrap: wrap;
+      padding: 20px 0;
+      li{
+        width: 50%;
+        margin:20px 0;
+      }
+    }
+  }
+
+}
+
+
+
+/*----------------------------------------------------
+アンカーのタイトル
+----------------------------------------------------*/
+#main  {
+  .wp-block-pullquote{
+    display: block;
+    @include orpheus;
+    padding: 50px 0 20px;
+    border-bottom: 1px solid #000;
+    @include mediaSP{
+      padding: 30px 0 20px;
+    }
+    p{
+      text-align: center;
+      font-size: 53px;
+      margin: 0;
+      line-height: 1.4;
+      @include mediaSP{
+        font-size: 36px;
+      }
+    }
+    &#theme{  &::before{ content: "テーマ";}  }
+    &#lecturers{  &::before{ content: "講師陣";}  }
+    &#schedule{  &::before{ content: "スケジュール";}  }
+    &#guidelines{  &::before{ content: "募集要項";}  }
+    &#member{  &::before{ content: "受講生ページ";}  }
+  }
+
+}
+

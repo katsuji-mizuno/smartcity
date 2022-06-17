@@ -1,0 +1,82 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+
+
+
+/*----------------------------------------------------
+コースの記事
+----------------------------------------------------*/
+ul.post_list{
+  &.course{
+    .status {
+      width: 10%;
+      @include mediaSP{
+          width: fit-content;
+          padding: 0 20px;
+          margin: 0 0 10px;
+      }
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------
+ページャー
+----------------------------------------------------*/
+.page-numbers {
+  @include orpheus;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0 40px;
+  @include mediaSP{
+    margin: 20px 0 40px;
+  }
+
+  li{
+    margin:0 15px;
+  }
+  a{
+    &.page-numbers{
+      color: #BCBCBC;
+      @include trans;
+    }
+    &.prev,&.next{
+      background-size: 100%;
+      width: 38px;
+      height: 38px;
+      overflow: hidden;
+      background-position: center center ;
+      border-radius: 30px;
+      @include trans;
+    }
+    &.prev{
+      background-image: url(../images/btn_prev.png);
+      background-position-x: -1px;
+      background-repeat: no-repeat;
+      background-size: 112%;
+    }
+    &.next{
+      background-image: url(../images/btn_next.png);
+      background-position-x: -3px;
+      background-repeat: no-repeat;
+      background-size: 112%;
+    }
+    &:hover{
+      &.prev{
+        background-position-x: -4px;
+      }
+      &.next{
+        background-position-x: 0px;
+      }
+      &.page-numbers{
+        color: #000;
+      }
+    }
+  }
+}

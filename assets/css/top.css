@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+.top_contents {
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.category_wrap {
+  text-align: left;
+}
+
+.cate_tit {
+  font-size: 50px;
+}
+.cate_tit.exhibition {
+  color: #FF8800;
+}
+.cate_tit.stage {
+  color: #1C3271;
+}
+.cate_tit.family {
+  color: #FF584B;
+}
+.cate_tit.event {
+  color: #A460C1;
+}
+
+/*====================================================================
+slick
+====================================================================*/
+.slider {
+  margin: 0 auto;
+  position: relative;
+  /*戻る、次へ矢印の位置*/
+}
+.slider img {
+  width: 100%;
+  /*スライダー内の画像を横幅100%に*/
+  height: auto;
+}
+.slider .slick-prev,
+.slider .slick-next {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  position: absolute;
+  position: absolute;
+  bottom: -100px;
+  top: unset;
+  width: 65px;
+  height: 65px;
+}
+.slider .slick-prev {
+  left: calc(50% - 75px);
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .slider .slick-prev {
+    left: calc(50% - 110px);
+  }
+}
+.slider .slick-next {
+  right: calc(50% - 75px);
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .slider .slick-next {
+    right: calc(50% - 35px);
+  }
+}
+.slider .slick-next:before,
+.slider .slick-prev:before {
+  content: "";
+}
+.slider .slick-prev_inner,
+.slider .slick-next_inner {
+  position: relative;
+}
+.slider .slick-prev_inner::before,
+.slider .slick-next_inner::before {
+  position: absolute;
+  content: "";
+  background-size: contain;
+  width: 65px;
+  height: 65px;
+}
+.slider .slick-prev_inner::before {
+  background-image: url(../images/recruit/slick_prev.png);
+}
+.slider .slick-next_inner::before {
+  background-image: url(../images/recruit/slick_next.png);
+}
+.slider .slick-list {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .slider .slick-list {
+    margin-left: calc((100vw - 1140px) / 2);
+  }
+}
+
+.slick img, .slick-center img {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.slick img:hover, .slick-center img:hover {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+/*# sourceMappingURL=top.css.map */

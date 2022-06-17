@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+#contact {
+  max-width: 966px;
+  padding: 0 20px;
+  margin: 0 auto 160px;
+  text-align: left;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #contact {
+    margin: 0 auto 100px;
+  }
+}
+
+.input_wrap {
+  padding: 10px 0;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .input_wrap {
+    margin: 10px 0 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #E3E3E3;
+  }
+}
+.input_wrap input, .input_wrap label, .input_wrap select, .input_wrap textarea {
+  vertical-align: middle;
+  border: none;
+  background: #FAFAFA;
+  padding: 10px 20px;
+  /* 750以下  */
+}
+.input_wrap input::-webkit-input-placeholder, .input_wrap label::-webkit-input-placeholder, .input_wrap select::-webkit-input-placeholder, .input_wrap textarea::-webkit-input-placeholder {
+  color: #DDD;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 17px;
+}
+.input_wrap input::-moz-placeholder, .input_wrap label::-moz-placeholder, .input_wrap select::-moz-placeholder, .input_wrap textarea::-moz-placeholder {
+  color: #DDD;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 17px;
+}
+.input_wrap input:-ms-input-placeholder, .input_wrap label:-ms-input-placeholder, .input_wrap select:-ms-input-placeholder, .input_wrap textarea:-ms-input-placeholder {
+  color: #DDD;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 17px;
+}
+.input_wrap input::-ms-input-placeholder, .input_wrap label::-ms-input-placeholder, .input_wrap select::-ms-input-placeholder, .input_wrap textarea::-ms-input-placeholder {
+  color: #DDD;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 17px;
+}
+.input_wrap input::placeholder, .input_wrap label::placeholder, .input_wrap select::placeholder, .input_wrap textarea::placeholder {
+  color: #DDD;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 17px;
+}
+@media all and (max-width: 750px) {
+  .input_wrap input, .input_wrap label, .input_wrap select, .input_wrap textarea {
+    padding: 20px;
+  }
+}
+
+.question {
+  padding: 10px 0;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .question {
+    width: 25%;
+  }
+}
+
+.answer {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .answer {
+    width: 75%;
+  }
+}
+.answer input, .answer textarea {
+  width: calc(100% - 40px);
+}
+
+.message {
+  color: #5F5F5F;
+  font-size: 20px;
+  margin: 80px 0 60px;
+}
+
+.btn_confirm {
+  text-align: center;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 60px auto;
+  position: relative;
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #525252;
+  /* 750以下  */
+}
+.btn_confirm::after {
+  content: "";
+  position: absolute;
+  background-size: 100%;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  background-position: center center;
+  border-radius: 30px;
+  top: -5px;
+  right: -50px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-image: url(../images/btn_next.png);
+  background-position-x: -3px;
+  background-repeat: no-repeat;
+  background-size: 112%;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .btn_confirm::after {
+    width: 50px;
+    height: 50px;
+  }
+}
+.btn_confirm::before {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 1px;
+  background: #525252;
+  bottom: -5px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn_confirm:hover {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .btn_confirm:hover::after {
+    background-position-x: 0px;
+  }
+  .btn_confirm:hover::before {
+    width: 100%;
+  }
+}
+@media all and (max-width: 750px) {
+  .btn_confirm {
+    font-size: 23px;
+    padding: 0 40px 0 0;
+    margin: 20px auto;
+  }
+  .btn_confirm::after {
+    width: 38px;
+    height: 38px;
+    right: -10px;
+    top: 0;
+    margin: 0 auto;
+  }
+}
+.btn_confirm input {
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #000;
+}
+.btn_confirm input[type=submit] {
+  -webkit-appearance: none;
+}
+
+.thanks {
+  text-align: center;
+  margin: 200px 0 100px;
+  line-height: 3;
+  font-size: 20px;
+}
+
+.back_top {
+  text-align: center;
+}
+.back_top a {
+  position: relative;
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #525252;
+}
+.back_top a::after {
+  content: "";
+  position: absolute;
+  background-size: 100%;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  background-position: center center;
+  border-radius: 30px;
+  top: -5px;
+  right: -50px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-image: url(../images/btn_next.png);
+  background-position-x: -3px;
+  background-repeat: no-repeat;
+  background-size: 112%;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .back_top a::after {
+    width: 50px;
+    height: 50px;
+  }
+}
+.back_top a::before {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 1px;
+  background: #525252;
+  bottom: -5px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.back_top a:hover {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .back_top a:hover::after {
+    background-position-x: 0px;
+  }
+  .back_top a:hover::before {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

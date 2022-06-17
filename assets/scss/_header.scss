@@ -1,0 +1,192 @@
+/*----------------------------------------------------
+ヘッダーロゴ
+----------------------------------------------------*/
+
+.header_logo_wrap{
+  background: #fff;
+  top:-80px;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  z-index: 10;
+  @include trans;
+  &.menu_appear{
+    top:0;
+  }
+}
+
+.header_logo{
+  text-align: left;
+  width: 390px;
+  padding: 0px 0px 0px 50px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  @include mediaSP{
+    max-width: 260px;
+    padding: 0px 0px 0px 20px;
+    height: 65px;
+    width: 70%;
+  }
+}
+
+.logo {
+  margin: 12px 0;
+  width: 240px;
+  @include mediaSP{
+    width:180px;
+  }
+}
+
+/*----------------------------------------------------
+ハンバーガーメニュー
+----------------------------------------------------*/
+.menu {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  @include trans;
+  @include mediaSP{
+    width: 65px;
+    height: 65px;
+  }
+
+  span{
+    display: block;
+    position: absolute;
+    background: #3E3E3E;
+    width: 40px;
+    height: 1px;
+    right: 20px;
+    opacity:1;
+    transform: rotate(0deg);
+    @include trans;
+    &:nth-child(1) { top: 30px;}
+    &:nth-child(2) { top: 40px;}
+    &:nth-child(3) { top: 50px;}
+    @include mediaSP{
+      width: 30px;
+      right: 17px;
+
+      &:nth-child(1) { top: 22px;}
+      &:nth-child(2) { top: 32px;}
+      &:nth-child(3) { top: 42px;}
+    }
+  }
+  &.open span{
+    &:nth-child(1){  top: 40px; transform: rotate(-45deg); }
+    &:nth-child(2){ display: none; }
+    &:nth-child(3){  top: 40px; transform: rotate(45deg); }
+    @include mediaSP{
+      &:nth-child(1){  top: 32px; transform: rotate(-45deg); }
+      &:nth-child(2){ display: none; }
+      &:nth-child(3){  top: 32px; transform: rotate(45deg); }
+    }
+  }
+  &:hover{
+    @include mediaPC{
+      span{
+        &:nth-child(1) { top: 35px;}
+        &:nth-child(3) { top: 45px;}
+      }
+      &.open span{
+        &:nth-child(1){  top: 40px; transform: rotate(-30deg); }
+        &:nth-child(3){  top: 40px; transform: rotate(30deg); }
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+ハンバーガーメニューの内部
+----------------------------------------------------*/
+
+#gNav {
+    position: absolute;
+    //top: -100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background:#F4F4F4;;
+    z-index: 2;
+    background-image: url(../images/header/bg_nav.jpg);
+    background-size: cover;
+    background-position-x: center;
+    opacity: 0;
+    pointer-events: none;
+    @include mediaSP{
+      background-position-x: right;
+    }
+    @include trans2;
+    &.open {
+    //  top: 0px;
+      opacity: 1;
+      overflow: auto;
+      position: fixed;
+      pointer-events: fill;
+    }
+  }
+
+.gNav_inner{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  ul{
+    margin: 0 0 0 10%;
+  }
+  li{
+    margin: 50px 0;
+    text-align: left;
+    @include mediaSSP{
+      margin: 30px 0;
+    }
+    a{
+      color: #fff;
+      position: relative;
+      display: block;
+      width: fit-content;
+      &::after{
+        content: "";
+        width: 0%;
+        position: absolute;
+        height: 2px;
+        background: #fff;
+        bottom: 0px;
+        left: 0;
+        @include trans;
+      }
+      &:hover{
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+  }
+  div{
+    @include orpheus;
+    font-size: 73px;
+    line-height: 1;
+    @include mediaSP{
+      font-size: 45px;
+    }
+    @include mediaSSP{
+      font-size: 40px;
+    }
+  }
+  span{
+    display: block;
+    margin: 0 0 10px;
+    @include mediaSP{
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+}
+
+

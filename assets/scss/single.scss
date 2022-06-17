@@ -1,0 +1,501 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+シングルページのスタイル
+----------------------------------------------------*/
+
+.date{
+  text-align: left;
+  width: fit-content;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 0 20px;
+  line-height: 1;
+  margin: 50px 0 0;
+}
+h1,h2,h3,h4,p{
+  text-align: left;
+}
+
+h1 {
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 40px;
+}
+
+h2{
+  color: #4B90BA;
+  font-size: 24px;
+  margin: 20px 0;
+  @include mediaSP{
+    font-size: 17px;
+  }
+  &.wp-block-post-title{
+    color: #000;
+    margin: 30px 0 20px;
+  }
+}
+
+h3{
+  font-size: 19px;
+  margin: 60px 0 0;
+}
+
+h4{
+  font-size: 19px;
+  color: #4B90BA;
+}
+
+
+#main{
+  p{
+    font-size: 15px;
+    line-height: 33px;
+    margin: 20px 0;
+    @include mediaSP{
+      font-size: 12px;
+    }
+    a{
+      color: #4B90BA;
+      @include trans;
+      position: relative;
+      &::after{
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 1px;
+        background: #4B90BA;
+        bottom: -5px;
+        left: 0;
+        @include trans;
+      }
+
+      &:hover{
+        &::after{
+          height: 2px;
+        }
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+シングルページのページャー
+----------------------------------------------------*/
+
+.single_pager{
+  @include orpheus;
+  display: flex;
+  justify-content: center;
+  max-width: 560px;
+  margin: 100px auto;
+  font-size: 23px;
+  @include mediaSP{
+    font-size: 20px;
+  }
+  .to_list{
+    width: 40%;
+    margin: 0 120px;
+    @include mediaSP{
+      margin: 0px;
+    }
+  }
+  .to_prev,.to_next{
+    width: 20%;
+
+    a{
+    position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 5px;
+        background-size: contain;
+        top: 16px;
+        background-repeat: no-repeat;
+        @include trans;
+        @include mediaSP{
+          top: 13px;
+        }
+      }
+    }
+  }
+  .to_prev{
+    a{
+      &::before{
+        background-image: url(../images/news/arr_prev.png);
+        left: -30px;
+      }
+      &:hover{
+        &::before{
+          left: -25px;
+        }
+      }
+    }
+  }
+  .to_next{
+    a{
+      &::before{
+        background-image: url(../images/news/arr_next.png);
+        right: -30px;
+      }
+      &:hover{
+        &::before{
+          right: -25px;
+        }
+      }
+    }
+  }
+  a{
+    position: relative;
+    &::after{
+      content: "";
+      width: 0%;
+      position: absolute;
+      height: 1px;
+      background: #000;
+      bottom: 0px;
+      left: 0;
+      @include trans;
+    }
+
+    &:hover{
+      &::after{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.wp-block-separator {
+  border-top: 1px solid #D9D9D9;
+  border-bottom: none;
+  margin: 20px 0;
+}
+
+
+
+figcaption{
+  text-align: left;
+  font-size: 15px
+}
+
+
+
+table{
+  border: 1px solid #D9D9D9;
+  margin: 20px 0;
+  th,td{
+    padding: 15px;
+  }
+  @include mediaSP{
+    overflow: auto;/*tableをスクロールさせる*/
+    white-space: nowrap;
+    font-size: 9px;
+    th,td{
+      padding: 5px;
+    }
+  }
+}
+
+
+
+/*----------色つきのテーブル---------*/
+
+.table_color{
+  table{
+    tr{
+      th,td{
+        border-bottom: 1px solid #D9D9D9;
+      }
+      td{
+        text-align: left;
+      }
+      th,td{
+        &:first-child{
+          text-align: center;
+          width: 30%;
+          border-right: 1px solid #000;
+        }
+      }
+      th{
+        @include mediaSP{
+          text-align: left;
+          &:first-child{
+            text-align: center;
+          }
+        }
+      }
+    }
+    tr{
+      &:nth-child(1){
+        td{
+          &:first-child{ background-color: #F3F8E4;}
+        }
+      }
+      &:nth-child(2){
+        td{
+          &:first-child{ background-color: #E1F5FD;}
+        }
+      }
+      &:nth-child(3){
+        td{
+          &:first-child{ background-color: #FEF4E1;}
+        }
+      }
+      &:nth-child(4){
+        td{
+          &:first-child{ background-color: #FFFFE0;}
+        }
+      }
+    }
+  }
+}
+
+/*----------色なしのテーブル---------*/
+
+.table_mono{
+  table{
+    tr{
+      th,td{
+        border-bottom: 1px solid #D9D9D9;
+      }
+      td{
+        text-align: left;
+      }
+      th,td{
+        &:first-child{
+          text-align: center;
+          width: 30%;
+          border-right: 1px solid #000;
+          background: #F7F7F7;
+        }
+      }
+    }
+  }
+}
+
+/*----------マトリクス---------*/
+
+.wp-block-table{
+  &.matrix{
+    table{
+      th,td{
+        border-right: 1px solid #D9D9D9;
+      }
+      th{
+        border-bottom: 1px solid #000000;
+      }
+      td{
+        border-bottom: 1px solid #D9D9D9;
+      }
+    }
+  }
+}
+
+
+
+
+
+.wp-block-buttons{
+  justify-content: center;
+  margin: 60px 0;
+  .wp-block-button {
+    a{
+      @include arrow;
+      padding: 0;
+      &::before{
+        bottom: 3px;
+      }
+      @include mediaSP{
+        font-size: 23px;
+        &::after{
+          width: 38px;
+          height: 38px;
+          top: 0;
+        }
+      }
+      &.wp-block-button__link {
+        background-color:unset;
+        color: #525252;
+      }
+    }
+  }
+}
+
+
+/*----------講師陣のスタイル---------*/
+#main{
+  .wp-block-columns{
+    margin-bottom: 0;
+    margin-top: 0px;
+    @include mediaPC{
+      margin-top: 50px;
+    }
+  }
+  .wp-block-column{
+    @include mediaSP{
+      margin: 20px 0;
+    }
+    .wp-block-group{
+      border-left: 1px solid #ccc;
+      position: relative;
+      padding: 0 0 0 20px;
+      @include mediaSP{
+        padding: 0 0 0 10px;
+      }
+    }
+    h2{
+      color: #000;
+      margin: 10px 0;
+      @include mediaSP{
+        margin: 5px 0;
+      }
+    }
+    h3{
+      font-size: 13px;
+      color: #6985F0;
+      margin: 0;
+      @include mediaSP{
+        font-size: 10px;
+      }
+    }
+    p{
+      font-size: 13px;
+      margin: 0;
+      @include mediaSP{
+        font-size: 10px;
+      }
+    }
+    .wp-block-buttons {
+      margin: 0;
+      position: absolute;
+      top: 0px;
+      right: 50px;
+    }
+  }
+}
+
+
+
+
+/*----------------------------------------------------
+メンバーページ
+----------------------------------------------------*/
+
+.member_tit{
+  margin: 40px 0 0;
+}
+
+#main.member > p{
+  color: #5F5F5F;
+  font-size: 20px;
+}
+
+form.post_password{
+  width: 100%;
+  border-bottom: 1px solid #E3E3E3;
+  margin: 0 0 220px;
+  position: relative;
+  &::before{
+    content: "PASSWORD";
+    @include mediaPC{
+      margin: 0 80px 0 0;
+      width: 20%;
+    }
+  }
+  input[ name = "post_password"]{
+    border: none;
+    background: #FAFAFA;
+    padding: 20px 10px;
+    width: calc(80% - 20px);
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    @include mediaSP{
+      width: calc(100% - 20px);
+    }
+
+  }
+
+}
+
+.member_btn_wrap{
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  right: 0;
+}
+
+.member_btn{
+  width: fit-content;
+  margin: 0 auto;
+  @include arrow;
+  left: -20px;
+  &::after{
+    top: -3px;
+    width: 38px;
+    height: 38px;
+  }
+  &::before{
+    bottom: 0
+  }
+  input[ name = "Submit"]{
+    @include orpheus;
+    cursor:pointer;
+    font-size: 23px;
+    border: none;
+    background: none;
+  }
+}
+
+
+/*----------------------------------------------------
+アンカーのタイトル
+----------------------------------------------------*/
+#main  {
+  .wp-block-pullquote{
+    display: none;
+  }
+
+}
+
+/*----------------------------------------------------
+箇条書きのスタイル
+----------------------------------------------------*/
+ul,ol{
+  margin: 10px 0 ;
+  text-align: left;
+  ul,ol{
+    margin: 0 0 0 20px;
+  }
+}
+
+
+ol{
+  counter-reset: item;
+  counter-reset: item 0; /*「2」からカウントし始める*/
+  li{
+    &::before{
+      counter-increment: item ;
+      content: counter(item)'.';
+    }
+  }
+}
+
+
+
+
+/*--------ヘッダーメニューのリスト打ち消し-------------*/
+.gNav_inner{
+  ul{
+    margin: 0 0 0 10%;
+  }
+}
+
+/*--------コースアンカーのリスト打ち消し-------------*/
+
+.course_menu {
+  ul{
+    text-align: center;
+  }
+}

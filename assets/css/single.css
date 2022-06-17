@@ -1,0 +1,591 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+シングルページのスタイル
+----------------------------------------------------*/
+.date {
+  text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 0 20px;
+  line-height: 1;
+  margin: 50px 0 0;
+}
+
+h1, h2, h3, h4, p {
+  text-align: left;
+}
+
+h1 {
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 40px;
+}
+
+h2 {
+  color: #4B90BA;
+  font-size: 24px;
+  margin: 20px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  h2 {
+    font-size: 17px;
+  }
+}
+h2.wp-block-post-title {
+  color: #000;
+  margin: 30px 0 20px;
+}
+
+h3 {
+  font-size: 19px;
+  margin: 60px 0 0;
+}
+
+h4 {
+  font-size: 19px;
+  color: #4B90BA;
+}
+
+#main p {
+  font-size: 15px;
+  line-height: 33px;
+  margin: 20px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main p {
+    font-size: 12px;
+  }
+}
+#main p a {
+  color: #4B90BA;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+#main p a::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 1px;
+  background: #4B90BA;
+  bottom: -5px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main p a:hover::after {
+  height: 2px;
+}
+
+/*----------------------------------------------------
+シングルページのページャー
+----------------------------------------------------*/
+.single_pager {
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 560px;
+  margin: 100px auto;
+  font-size: 23px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .single_pager {
+    font-size: 20px;
+  }
+}
+.single_pager .to_list {
+  width: 40%;
+  margin: 0 120px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .single_pager .to_list {
+    margin: 0px;
+  }
+}
+.single_pager .to_prev, .single_pager .to_next {
+  width: 20%;
+}
+.single_pager .to_prev a, .single_pager .to_next a {
+  position: relative;
+}
+.single_pager .to_prev a::before, .single_pager .to_next a::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 5px;
+  background-size: contain;
+  top: 16px;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .single_pager .to_prev a::before, .single_pager .to_next a::before {
+    top: 13px;
+  }
+}
+.single_pager .to_prev a::before {
+  background-image: url(../images/news/arr_prev.png);
+  left: -30px;
+}
+.single_pager .to_prev a:hover::before {
+  left: -25px;
+}
+.single_pager .to_next a::before {
+  background-image: url(../images/news/arr_next.png);
+  right: -30px;
+}
+.single_pager .to_next a:hover::before {
+  right: -25px;
+}
+.single_pager a {
+  position: relative;
+}
+.single_pager a::after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 1px;
+  background: #000;
+  bottom: 0px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.single_pager a:hover::after {
+  width: 100%;
+}
+
+.wp-block-separator {
+  border-top: 1px solid #D9D9D9;
+  border-bottom: none;
+  margin: 20px 0;
+}
+
+figcaption {
+  text-align: left;
+  font-size: 15px;
+}
+
+table {
+  border: 1px solid #D9D9D9;
+  margin: 20px 0;
+  /* 750以下  */
+}
+table th, table td {
+  padding: 15px;
+}
+@media all and (max-width: 750px) {
+  table {
+    overflow: auto;
+    /*tableをスクロールさせる*/
+    white-space: nowrap;
+    font-size: 9px;
+  }
+  table th, table td {
+    padding: 5px;
+  }
+}
+
+/*----------色つきのテーブル---------*/
+.table_color table tr th, .table_color table tr td {
+  border-bottom: 1px solid #D9D9D9;
+}
+.table_color table tr td {
+  text-align: left;
+}
+.table_color table tr th:first-child, .table_color table tr td:first-child {
+  text-align: center;
+  width: 30%;
+  border-right: 1px solid #000;
+}
+.table_color table tr th {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .table_color table tr th {
+    text-align: left;
+  }
+  .table_color table tr th:first-child {
+    text-align: center;
+  }
+}
+.table_color table tr:nth-child(1) td:first-child {
+  background-color: #F3F8E4;
+}
+.table_color table tr:nth-child(2) td:first-child {
+  background-color: #E1F5FD;
+}
+.table_color table tr:nth-child(3) td:first-child {
+  background-color: #FEF4E1;
+}
+.table_color table tr:nth-child(4) td:first-child {
+  background-color: #FFFFE0;
+}
+
+/*----------色なしのテーブル---------*/
+.table_mono table tr th, .table_mono table tr td {
+  border-bottom: 1px solid #D9D9D9;
+}
+.table_mono table tr td {
+  text-align: left;
+}
+.table_mono table tr th:first-child, .table_mono table tr td:first-child {
+  text-align: center;
+  width: 30%;
+  border-right: 1px solid #000;
+  background: #F7F7F7;
+}
+
+/*----------マトリクス---------*/
+.wp-block-table.matrix table th, .wp-block-table.matrix table td {
+  border-right: 1px solid #D9D9D9;
+}
+.wp-block-table.matrix table th {
+  border-bottom: 1px solid #000000;
+}
+.wp-block-table.matrix table td {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.wp-block-buttons {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 60px 0;
+}
+.wp-block-buttons .wp-block-button a {
+  position: relative;
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #525252;
+  padding: 0;
+  /* 750以下  */
+}
+.wp-block-buttons .wp-block-button a::after {
+  content: "";
+  position: absolute;
+  background-size: 100%;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  background-position: center center;
+  border-radius: 30px;
+  top: -5px;
+  right: -50px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-image: url(../images/btn_next.png);
+  background-position-x: -3px;
+  background-repeat: no-repeat;
+  background-size: 112%;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .wp-block-buttons .wp-block-button a::after {
+    width: 50px;
+    height: 50px;
+  }
+}
+.wp-block-buttons .wp-block-button a::before {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 1px;
+  background: #525252;
+  bottom: -5px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.wp-block-buttons .wp-block-button a:hover {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .wp-block-buttons .wp-block-button a:hover::after {
+    background-position-x: 0px;
+  }
+  .wp-block-buttons .wp-block-button a:hover::before {
+    width: 100%;
+  }
+}
+.wp-block-buttons .wp-block-button a::before {
+  bottom: 3px;
+}
+@media all and (max-width: 750px) {
+  .wp-block-buttons .wp-block-button a {
+    font-size: 23px;
+  }
+  .wp-block-buttons .wp-block-button a::after {
+    width: 38px;
+    height: 38px;
+    top: 0;
+  }
+}
+.wp-block-buttons .wp-block-button a.wp-block-button__link {
+  background-color: unset;
+  color: #525252;
+}
+
+/*----------講師陣のスタイル---------*/
+#main .wp-block-columns {
+  margin-bottom: 0;
+  margin-top: 0px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  #main .wp-block-columns {
+    margin-top: 50px;
+  }
+}
+#main .wp-block-column {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-column {
+    margin: 20px 0;
+  }
+}
+#main .wp-block-column .wp-block-group {
+  border-left: 1px solid #ccc;
+  position: relative;
+  padding: 0 0 0 20px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-column .wp-block-group {
+    padding: 0 0 0 10px;
+  }
+}
+#main .wp-block-column h2 {
+  color: #000;
+  margin: 10px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-column h2 {
+    margin: 5px 0;
+  }
+}
+#main .wp-block-column h3 {
+  font-size: 13px;
+  color: #6985F0;
+  margin: 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-column h3 {
+    font-size: 10px;
+  }
+}
+#main .wp-block-column p {
+  font-size: 13px;
+  margin: 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main .wp-block-column p {
+    font-size: 10px;
+  }
+}
+#main .wp-block-column .wp-block-buttons {
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  right: 50px;
+}
+
+/*----------------------------------------------------
+メンバーページ
+----------------------------------------------------*/
+.member_tit {
+  margin: 40px 0 0;
+}
+
+#main.member > p {
+  color: #5F5F5F;
+  font-size: 20px;
+}
+
+form.post_password {
+  width: 100%;
+  border-bottom: 1px solid #E3E3E3;
+  margin: 0 0 220px;
+  position: relative;
+}
+form.post_password::before {
+  content: "PASSWORD";
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  form.post_password::before {
+    margin: 0 80px 0 0;
+    width: 20%;
+  }
+}
+form.post_password input[name=post_password] {
+  border: none;
+  background: #FAFAFA;
+  padding: 20px 10px;
+  width: calc(80% - 20px);
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  form.post_password input[name=post_password] {
+    width: calc(100% - 20px);
+  }
+}
+
+.member_btn_wrap {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  right: 0;
+}
+
+.member_btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #525252;
+  left: -20px;
+}
+.member_btn::after {
+  content: "";
+  position: absolute;
+  background-size: 100%;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  background-position: center center;
+  border-radius: 30px;
+  top: -5px;
+  right: -50px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-image: url(../images/btn_next.png);
+  background-position-x: -3px;
+  background-repeat: no-repeat;
+  background-size: 112%;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .member_btn::after {
+    width: 50px;
+    height: 50px;
+  }
+}
+.member_btn::before {
+  content: "";
+  width: 0%;
+  position: absolute;
+  height: 1px;
+  background: #525252;
+  bottom: -5px;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.member_btn:hover {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .member_btn:hover::after {
+    background-position-x: 0px;
+  }
+  .member_btn:hover::before {
+    width: 100%;
+  }
+}
+.member_btn::after {
+  top: -3px;
+  width: 38px;
+  height: 38px;
+}
+.member_btn::before {
+  bottom: 0;
+}
+.member_btn input[name=Submit] {
+  font-family: orpheuspro, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  cursor: pointer;
+  font-size: 23px;
+  border: none;
+  background: none;
+}
+
+/*----------------------------------------------------
+アンカーのタイトル
+----------------------------------------------------*/
+#main .wp-block-pullquote {
+  display: none;
+}
+
+/*----------------------------------------------------
+箇条書きのスタイル
+----------------------------------------------------*/
+ul, ol {
+  margin: 10px 0;
+  text-align: left;
+}
+ul ul, ul ol, ol ul, ol ol {
+  margin: 0 0 0 20px;
+}
+
+ol {
+  counter-reset: item;
+  counter-reset: item 0;
+  /*「2」からカウントし始める*/
+}
+ol li::before {
+  counter-increment: item;
+  content: counter(item) ".";
+}
+
+/*--------ヘッダーメニューのリスト打ち消し-------------*/
+.gNav_inner ul {
+  margin: 0 0 0 10%;
+}
+
+/*--------コースアンカーのリスト打ち消し-------------*/
+.course_menu ul {
+  text-align: center;
+}
+/*# sourceMappingURL=single.css.map */
